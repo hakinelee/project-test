@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>网络协会</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link href="../image/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="../css/general.css">
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 6;
+        }
+
+        .div2 {
+            grid-area: 5 / 1 / 6 / 6;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 5 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 5 / 6;
+        }
+    </style>
+</head>
+<body>
+<!-- top  div1-->
+<div class="div1">
+    <a href="https://justsit.edu.cn/" target="_blank" class="ContentMiddle">
+        <div id="fix">
+            <img src="../favicon/logo.png" alt="江苏科技大学苏州理工学院" srcset="">
+        </div>
+    </a>
+</div>
+<!--  -->
+
+<!-- nav -->
+<div class="div2">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                Dropdown
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                ...
+            </ul>
+        </li>
+        ...
+    </ul>
+</div>
+<!--  -->
+
+<!-- footer div2-->
+<footer>
+
+</footer>
+
+
+<script src="../jquery/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

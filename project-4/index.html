@@ -1,19 +1,52 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="vue.js"></script>
-    <!-- 引入 CDN 资源 -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+
 </head>
+
 <body>
-    <!-- 准备好一个容器 -->
-    <div id="root">
-        <h1>Hello</h1>
+    <div>
+        <input type="file" name="" id="upload_img">
+        <img src="" alt="最终展示图片" id="upload_img_preview">
     </div>
 </body>
+<script>
+    var ipt = document.getElementById('upload_img');
+    ipt.addEventListener('change', function (e) {
+        var file = e.target.files[0];
+    });
+    img.onload = function () {
+        var imgWidth = this.width;          //上传图片的宽
+        var imgHeight = this.width,         //上传图片的高
+            maxWidth = 1024,                //图片最大宽
+            maxHeight = 1024,               //图片最大高
+            targetWidth = imgWidth,         //最后图片的宽
+            targetHeight = imgHeight;       //最后图片的高
+        // 如果图片的宽或者高大于图片的最大宽高
+        if (imgWidth > maxWidth || imgHeight > maxHeight) {
+            // 宽大于高
+            if (imgWidth / imgHeight > maxWidth / maxHeight) {
+                targetWidth = maxWidth;
+                targetHeight = Math.round(maxWidth * (imgWidth / imgHeight))
+            }
+            // 款小于高
+            else {
+                targetHeight = maxHeight;
+                targetWidth = Math.round(maxHeight * (imgHeight / imgWidth));
+            }
+        };
+        canvas.width = targetWidth;                                 //canvas的宽=图片的宽
+        canvas.height = targetHeight;                               //canvas的高=图片的高
+        context.clearRect(0, 0, targetWidth, targetHeight);         //清理canvas
+        context.drawImage(img, 0, 0, targetWidth, targetHeight);    //canvas绘图
+        var newUrl = canvas.toDataURL('image', 0.92);               //canvas导出成为base64
+        upload_img_preview.src = newUrl;
+    }
+</script>
+
 </html>
