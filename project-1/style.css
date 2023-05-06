@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    min-height: 100vh;
+    background: #09203f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+    gap: 20px;
+}
+
+.box h2 {
+    color: white;
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #09203f;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 15px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    color: #50c9c3;
+    transform: translateX(15px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0.5px;
+    background: #09203f;
+    letter-spacing: 0.1em;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 1px solid #50c9c3;
+}
+
+/* 给按钮写样式 */
+.buttonBox button{
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+}
+
+.buttonBox button:hover {
+    color: #50c9c3;
+    border: 1px solid #50c9c3;
+} 

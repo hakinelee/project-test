@@ -1,0 +1,122 @@
+/* 通配符清除默认样式 */
+* {
+    /* 清除内外边距 */
+    margin: 0;
+    padding: 0;
+    /* 字体不加粗 */
+    font-weight: normal;
+    /* 去除下划线 */
+    text-decoration: none;
+    /* 去除无序列表li标签的小圆点 */
+    list-style: none;
+}
+
+/* body {
+    设置背景
+    background-color: #66CCFF;
+} */
+
+.box {
+    position: absolute;
+    /* 让整个盒子居中 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    height: 540px;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+
+.list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 设置ul的高度,让子元素li可以上下浮动 */
+    width: 480px;
+    height: 540px;
+}
+
+.list li {
+    /* 让每一个li标签上下浮动 */
+    /* float: left; */
+    width: 480px;
+    height: 540px;
+    /* 使用animation标签，设置动画名称 时间 循环次数（此处为无限循环） 匀速 */
+    animation: move 10s infinite linear;
+}
+
+/* 定义动画 */
+@keyframes move {
+
+    /* 0的时候显示第一张 */
+    0% {
+        transform: translateY(0px);
+    }
+
+    15% {
+        transform: translateY(-540px);
+    }
+
+    /* 20的时候显示第二张 */
+    /* 设置同样的值让图片停留一会 */
+    20% {
+        transform: translateY(-540px);
+    }
+
+    35% {
+        transform: translateY(-1080px);
+
+    }
+
+    /* 40的时候显示第三张 */
+    40% {
+        transform: translateY(-1080px);
+    }
+
+    55% {
+        transform: translateY(-1620px);
+
+    }
+
+    /* 60的时候显示第四张 */
+    60% {
+        transform: translateY(-1620px);
+    }
+
+    75% {
+        transform: translateY(-2160px);
+
+    }
+
+    /* 80的时候显示第五张 */
+    80% {
+        transform: translateY(-2160px);
+
+    }
+
+    100% {
+        transform: translateY(-2700px);
+    }
+}
+
+/* 高级选择器选择每一张图片的地址 */
+.list li:nth-child(1) {
+    background: url("") no-repeat center/cover;
+}
+
+.list li:nth-child(2) {
+    background: url("") no-repeat center/cover;
+}
+
+.list li:nth-child(3) {
+    background: url("") no-repeat center/cover;
+}
+
+.list li:nth-child(4) {
+    background: url("") no-repeat center/cover;
+}
+
+.list li:nth-child(5) {
+    background: url("") no-repeat center/cover;
+}
